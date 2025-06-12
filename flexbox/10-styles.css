@@ -543,7 +543,7 @@ ul.row {
     margin-top: -8.5rem;
 }
 
-.home-homepage{
+.hero-homepage{
     background-position: 75% 0;
     background-repeat: no-repeat;
     background-size: 90rem auto;
@@ -585,9 +585,10 @@ ul.row {
 
 /* Section ABOUT US */
 
-.section-aboout-us [class^="col-"]{
+.section-aboout-us [class^="col-"] {
     align-self: center;
 }
+
 
 
 /*** 4. CARD ***/
