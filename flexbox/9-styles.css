@@ -571,7 +571,7 @@ ul.row {
 
 /* Section ABOUT US */
 
-.section-aboout-us [class*="col-"]{
+.section-aboout-us > [class*="col-"]{
     align-self: center;
 }
 
