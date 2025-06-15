@@ -707,7 +707,8 @@ input[type="text"],input[type="email"]{
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
-  border: 0.1rem solid var(--color-light-grey);
+  border: 0.1rem solid var(--color-grey);
+  background-color: var(--color-light-grey);
 }
 
 
