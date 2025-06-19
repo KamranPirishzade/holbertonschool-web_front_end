@@ -1,9 +1,8 @@
-/* Task: No margin/padding on body, margin on p using variable */
+/* Nested tag */
 body {
-  padding: 0;
-  margin: 0;
+  margin: 0px;
+  padding: 0px;
 }
-
-p {
+body p {
   margin: 10px;
 }/*# sourceMappingURL=3-nested_tag.css.map */

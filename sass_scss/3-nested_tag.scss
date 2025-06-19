@@ -1,12 +1,7 @@
-/* Task: No margin/padding on body, margin on p using variable */
-
-$marginText: 10px;
-
+/* Nested tag */
 body {
-  padding: 0;
-  margin: 0;
-}
-
-p {
-  margin: $marginText;
-}
+    margin: 0px;
+    padding: 0px;
+    p {
+      margin: 10px; }
+    }
