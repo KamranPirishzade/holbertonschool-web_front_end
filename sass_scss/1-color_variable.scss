@@ -1,6 +1,11 @@
 /* Use varible for recurrent color */
 $textColor:#3D3D3D;
 
-body, p{
+body{
+    color: $textColor;
+}
+
+
+p{
     color: $textColor;
 }
