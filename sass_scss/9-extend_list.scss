@@ -1,0 +1,20 @@
+$fontSmall:12px;
+$success:#00FF00;
+$warning:#FF0000;
+
+.info{
+    font-size: $fontSmall;
+}
+
+.success{
+    color: $success;
+    @extend .info;
+}
+
+.warning{
+    color: $warning;
+    @extend .info;
+}
+
+
+
