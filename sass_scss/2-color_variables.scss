@@ -1,0 +1,17 @@
+//Text and back color variables
+
+$textColor:#3D3D3D;
+$backgroundColor:#6d6d6d;
+
+body{
+    background-color: $backgroundColor;
+    color: $textColor;
+}
+
+p{
+    color: $textColor;
+}
+
+h2{
+    background-color: $backgroundColor;
+}
