@@ -1,4 +1,4 @@
-@use "11-photos";
+@use "photos";
 
 @each $name in $list-names {
     .photo-#{$name} {
