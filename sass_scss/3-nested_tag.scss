@@ -1,0 +1,13 @@
+@mixin noPixel{
+    padding: 0;
+    margin: 0;
+}
+
+$marginText:10px;
+
+body{
+    @include noPixel();
+    p{
+        margin: $marginText;
+    }
+}
