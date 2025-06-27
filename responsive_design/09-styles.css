@@ -211,7 +211,18 @@ body {
     color: var(--color-primary);
     background: var(--color-white);
   }
-  
+  @media screen and (max-width: 480px) {
+    html {
+        font-size: 57%;
+    }
+}
+  @media screen and (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 60%;
+    }
+}
+ 
+
   /* Helpers
       ============================= */
   
@@ -404,6 +415,34 @@ body {
     fill: var(--text-color);
   }
   
+  /* Media query for screens up to 767px */
+@media screen and (max-width: 767px) {
+    /* Override CSS variable inside :root selector */
+    :root {
+      --footer-padding: 5rem 2rem 1rem;
+    }
+  }
+  /* Target .social.nav inside .footer */
+.footer .social.nav {
+    text-align: center;
+  }
+  
+  /* Target .footer-nav inside .footer */
+  .footer .footer-nav {
+    text-align: center;
+  }
+  /* Target adjacent li to li inside .social.nav */
+.footer .social.nav li + li {
+    padding-left: 2rem;
+  }
+  
+  /* Target adjacent li to li inside .footer-nav */
+  .footer .footer-nav li + li {
+    padding-left: 2rem;
+  }
+  
+  
+
   /*** 3. SECTION ***/
   
   /* Section (all styles)
@@ -488,6 +527,19 @@ body {
     justify-content: center;
     min-height: 35vh;
   }
+  @media screen and (max-width: 767px) {
+    .section-hero {
+        margin: -0.1rem 0;
+    }
+    
+    .hero-homepage {
+        background-position: 85% 0;
+    }
+    
+    .section-hero .section-body {
+        padding: 2rem;
+    }
+}
   /* Section Latest news
       ============================= */
   
@@ -591,6 +643,25 @@ body {
   .card-work:hover .card-title {
     opacity: 1;
   }
+  /* Media query for screens up to 767px */
+@media screen and (max-width: 767px) {
+  /* Target .card-inner inside .card-work */
+  .card-work .card-inner {
+    position: relative;
+    --text-color: var(--color-white);
+  }
+  /* Target .card-title inside .card-work */
+.card-work .card-title {
+  opacity: 1;
+}
+
+/* Target all <a> tags inside .card-work .card-title */
+.card-work .card-title a {
+  padding: 2rem 1rem 0 1rem;
+}
+
+}
+
   
   /* Card SERVICES
       ============================= */
@@ -1014,4 +1085,65 @@ body {
     top: -.7rem;
 }
 
+/* menu btn */
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .navbar-menu {
+  display: block;
+}
+.header .menu-btn:checked ~ .navbar-menu .nav {
+  max-height: 100%;
+  overflow: inherit;
+}
+
+.header .menu-btn:checked ~ .menu-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon::before,
+.header .menu-btn:checked ~ .menu-icon .navicon::after {
+  top: 0;
+}
+@media screen and (max-width: 767px) {
+  :root {
+      --header-padding: 2rem 0 0;
+  }
   
+  .header {
+      background: var(--color-black);
+  }
+  
+  .header-container {
+      flex-wrap: wrap;
+      padding: 0 1.5rem;
+  }
+  
+  .header .menu-icon {
+      display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .header-logo {
+      flex-basis: 70%;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 767px) {
+  .header-logo {
+      flex-basis: 79%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header .menu-icon {
+      display: none;
+  }
+}
