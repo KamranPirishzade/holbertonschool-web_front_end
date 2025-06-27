@@ -1,1 +1,1 @@
-# holbertonschool-web_front_end
+This is going to be my dir to learn more about responsive design
