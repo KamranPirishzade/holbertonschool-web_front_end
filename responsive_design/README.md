@@ -1,1 +1,1 @@
-This is going to be my dir to learn more about responsive design
+## Responsive design task
