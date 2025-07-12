@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 0</title>
+
+</head>
+
+<body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        function createSearchForm() {
+            let input = $("<input>").attr("type", "text");
+            let inputBtn = $("<input>").attr("type", "submit");
+
+            let list = $("<ul>")
+            inputBtn.click(function () {
+                list.empty();
+                queryWikipedia(input.val());
+            })
+            $('body').append(input).append(inputBtn).append(list)
+        }
+
+        function addNewArticle(id, title, snippet) {
+            let listItem = $("<li>")
+            let paragraph1 = $("<p>")
+            let titleText = $("<b>").text(title)
+            let span = $("<span>").text(id);
+            paragraph1.append(span).append(titleText)
+            let paragraph2 = $("<p>").html(snippet);
+            listItem.append(paragraph1).append(paragraph2)
+            $("ul").append(listItem);
+        }
+
+        function queryWikipedia(search) {
+            const data = {
+                action: 'query',
+                list: 'search',
+                srsearch: search,
+                format: 'json',
+                origin: '*'
+            };
+
+            $.ajax({
+                url: 'https://en.wikipedia.org/w/api.php',
+                method: 'GET',
+                data: data,
+                success: function (response) {
+                    const results = response.query.search;
+                    results.forEach(result => {
+                        addNewArticle(result.pageid+"-", result.title, result.snippet);
+                    });
+                },
+                error: function () {
+                    $('ul').append('<li><p>Error retrieving results.</p></li>');
+                }
+            });
+        }
+            createSearchForm();
+    </script>
+</body>
+
+</html>
