@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 0</title>
+
+</head>
+
+<body>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+        integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <script>
+        function createFamilyTree(){
+            let table=$("<table>")
+            table.append("<th>Firstname</th>").append("<th>Lastname</th>")
+            let persons=[{fname:"Guillaume",lname:"Salva"},{fname:"Paulette",lname:"Salva"},{fname:"Antoine ",lname:"Salva"}]
+            let rows=$(`<tbody>`)
+            for(let i=0;i<persons.length;i++){
+                let row=$("<tr>")
+                let name=$(`<td>`).text(persons[i].fname);
+                let lname=$(`<td>`).text(persons[i].lname);
+                row.append(name).append(lname);
+                rows.append(row);
+            }
+            table.append(rows)
+            $('body').append(table);
+        }
+        createFamilyTree()
+
+
+        function replaceFamilyTree(){
+            let row=$("<tr>")
+            let name=$("<td>").text("Gerard");
+            let lname=$("<td>").text("Bonissa");
+            row.append(name).append(lname);
+            $("tbody").html(row)
+        }
+
+        replaceFamilyTree()
+    </script>
+</body>
+
+</html>
